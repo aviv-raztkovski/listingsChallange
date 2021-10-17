@@ -29,6 +29,7 @@ const TOOLS = {
 
 module.exports = [
   {
+    id: 1,
     isFeatured: true,
     listingTitle: "Senior Frontend Developer",
     listedCompany: "Photosnap",
@@ -40,6 +41,7 @@ module.exports = [
     languages: [LANGUAGES.HTML, LANGUAGES.CSS, LANGUAGES.JS]
   },
   {
+    id: 2,
     isFeatured: true,
     listingTitle: "Fullstack Developer",
     listedCompany: "Manage",
@@ -48,10 +50,11 @@ module.exports = [
     listingType: LISTING_TYPES.PART_TIME,
     role: ROLES.FULL_STACK,
     level: LEVELS.MID_WEIGHT,
-    languages: [LANGUAGES.PYTHON, languages.JS],
+    languages: [LANGUAGES.PYTHON, LANGUAGES.JS],
     tools: [TOOLS.REACT]
   },
   {
+    id: 3,
     isFeatured: false,
     listingTitle: "Junior Frontend Developer",
     listedCompany: "Account",
@@ -64,6 +67,7 @@ module.exports = [
     tools: [TOOLS.REACT, TOOLS.SASS]
   },
   {
+    id: 4,
     isFeatured: false,
     listingTitle: "Junior Frontend Developer",
     listedCompany: "MyHome",
