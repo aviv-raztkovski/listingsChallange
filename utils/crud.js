@@ -28,4 +28,15 @@ const createEntries = (req, res, next) => {
     return next();
 }
 
-module.exports = { createEntries };
+const readEntries = (req, res, next) => {
+    if (db){
+        res.status(200).json(db)
+    }
+    else{
+        res.status(404).send({ "message": "DB not found" });
+    }
+
+    return next();
+}
+
+module.exports = { createEntries, readEntries };

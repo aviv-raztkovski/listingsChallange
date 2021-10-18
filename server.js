@@ -1,7 +1,7 @@
 const express = require('express');
 const bp = require('body-parser');
 const { port } = require('./config.json');
-const { createEntries } = require('./utils/crud');
+const { createEntries, readEntries } = require('./utils/crud');
 
 const app = express();
 
@@ -14,5 +14,7 @@ app.get('/example', (req, res) => {
 });
 
 app.post('/jobs', createEntries, (req, res) => {})
+
+app.get('/jobs', readEntries, (req, res) => {})
 
 app.listen(port, () => console.log(`server is listening on: ${port}`));
