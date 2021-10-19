@@ -17,4 +17,6 @@ app.post('/jobs', createEntries, (req, res) => {})
 
 app.get('/jobs', readEntries, (req, res) => {})
 
+app.put('/jobs/:id', updateEntries, (req, res) => {})
+
 app.listen(port, () => console.log(`server is listening on: ${port}`));
