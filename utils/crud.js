@@ -85,7 +85,26 @@ const updateEntries = (req, res, next) => {
                 db[entrieIndex][key] = value;
             }
 
-            res.status(200).send({ "message": "entrie edited successfully", "data": JSON.stringify(db[entrieIndex]) })
+            res.status(200).send({ "message": "entrie edited successfully", "data": db[entrieIndex] })
+        }
+    }
+
+    return next();
+}
+
+const deleteEntries = (req, res, next) => {
+    const id = req.params.id;
+    if (!id) {
+        res.status(400).send({ "message": "id must be provided"})
+    }
+    else {
+        const entrieIndex = findEntrie(id)
+        if(entrieIndex == -1) {
+            res.status(404).send({ "message": "entrie not found" })
+        }
+        else {
+            db.splice(entrieIndex, 1);
+            res.status(200).send({ "message": "Entrie deleted", "data": db })
         }
     }
 
@@ -95,5 +114,6 @@ const updateEntries = (req, res, next) => {
 module.exports = {
     createEntries,
     readEntries,
-    updateEntries
+    updateEntries,
+    deleteEntries,
 };
