@@ -39,4 +39,8 @@ const readEntries = (req, res, next) => {
     return next();
 }
 
-module.exports = { createEntries, readEntries };
+const updateEntries = (req, res, next) => {
+    
+}
+
+module.exports = { createEntries, readEntries, updateEntries };

@@ -1,7 +1,7 @@
 const express = require('express');
 const bp = require('body-parser');
 const { port } = require('./config.json');
-const { createEntries, readEntries } = require('./utils/crud');
+const { createEntries, readEntries, updateEntries } = require('./utils/crud');
 
 const app = express();
 
